@@ -21,7 +21,9 @@ function App() {
 
 function check(e) {
   e.preventDefault(); 
-  axios.post("http://localhost:5000/login", { username, password })
+  axios.get("http://localhost:5000/login", {
+  params: { username, password }
+})
     .then(function (data) {
       if (data.data === true) {
         navigate("/success");
