@@ -39,7 +39,7 @@ function check(e) {
       <div className="w-full max-w-sm p-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
-        <form  method="post" className="space-y-4"  >
+        <form  method="get" className="space-y-4"  >
           <div>
             <label className="block text-gray-700 mb-1">Username</label>
             <input
