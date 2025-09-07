@@ -24,13 +24,15 @@ function check(e) {
   axios.get("http://localhost:5000/login", {
   params: { username, password }
 })
-    .then(function (data) {
-      if (data.data === true) {
-        navigate("/success");
-      } else {
-        navigate("/fail");
-      }
-    });
+    .then(res => {
+  console.log(res.data); 
+  
+  if (res.data === true || res.data === "true") {
+    navigate("/success");
+  } else {
+    navigate("/fail");
+  }
+});
 }
 
 
