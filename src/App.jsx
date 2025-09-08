@@ -21,12 +21,10 @@ function App() {
 
 function check(e) {
   e.preventDefault(); 
-  axios.get("http://localhost:5000/login", {
-  params: { username, password }
-})
+  axios.get("http://localhost:5000/login?username=user&password=1234")
     .then(res => {
   console.log(res.data); 
-  
+
   if (res.data === true || res.data === "true") {
     navigate("/success");
   } else {
@@ -41,7 +39,7 @@ function check(e) {
       <div className="w-full max-w-sm p-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
-        <form  method="get" className="space-y-4"  >
+        <form  onClick={check} className="space-y-4"  >
           <div>
             <label className="block text-gray-700 mb-1">Username</label>
             <input
@@ -65,8 +63,8 @@ function check(e) {
           </div>
 
           <button
-          type="button"
-            onClick={check}
+          type="submit"
+          
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
             
           >
