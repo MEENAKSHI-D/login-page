@@ -22,7 +22,10 @@ function App() {
 function check(e) {
   e.preventDefault(); 
   
-axios.get("https://api-login-new.onrender.com/login?username=user&password=1234")
+axios.post("https://login-back-api-yco9.onrender.com/login", {
+  username,
+  password
+})
 
 
 
