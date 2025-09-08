@@ -21,7 +21,14 @@ function App() {
 
 function check(e) {
   e.preventDefault(); 
-  axios.get("http://localhost:5000/login?username=user&password=1234")
+  
+axios.post("http://localhost:5000/login", {
+  username,
+  password
+})
+
+
+
     .then(res => {
   console.log(res.data); 
 
@@ -39,7 +46,7 @@ function check(e) {
       <div className="w-full max-w-sm p-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
-        <form  onClick={check} className="space-y-4"  >
+        <form onSubmit={check} className="space-y-4"  >
           <div>
             <label className="block text-gray-700 mb-1">Username</label>
             <input
@@ -64,7 +71,7 @@ function check(e) {
 
           <button
           type="submit"
-          
+            
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
             
           >
